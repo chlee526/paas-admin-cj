@@ -1,0 +1,25 @@
+::v-deep .ui_function {
+    position: sticky;
+    top: 40px;
+    z-index: 2;
+
+    &.is-lnb {
+        top: 0;
+    }
+}
+
+::v-deep .ui_brd {
+    > .wrap {
+        > table {
+            thead {
+                top: 100px;
+            }
+
+            tbody {
+                tr:not(.is-no-over) {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+main {
+    .ui_brd {
+        > .wrap {
+            > table {
+                width: 100%;
+                table-layout: fixed;
+
+                > tbody {
+                    > tr {
+                        cursor: pointer;
+
+                        > td {
+                            > span.box {
+                                display: flex;
+                                justify-content: space-between;
+
+                                span {
+                                    &:last-child {
+                                        flex: 0 0 auto;
+                                        text-align: right;
+                                    }
+                                }
+                            }
+
+                            > .ui_bedge {
+                                display: block;
+                                width: auto;
+                                padding: 0;
+                            }
+
+                            &.is-no-over {
+                                cursor: default !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

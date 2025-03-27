@@ -1,0 +1,112 @@
+@import '@shared/styles/base/color_set.scss';
+@import '@shared/styles/util/mixins.scss';
+
+.month_calendar {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+
+    button {
+        border: none !important;
+        background: none !important;
+
+        &::before {
+            content: none;
+        }
+        &:hover {
+            &:not(.is-active) {
+                background-color: $component_bg_color_over;
+            }
+        }
+    }
+    > div {
+        display: flex;
+
+        &.year_box {
+            flex: 0 0 120px;
+            flex-flow: column;
+            gap: 10px;
+            overflow: auto;
+
+            .ui_btn {
+                position: relative;
+                height: auto;
+                padding: 0;
+                border-radius: 0;
+                overflow: hidden;
+                @include transition(0);
+
+                > .txt {
+                    display: block;
+                    padding: 0 20px;
+                    margin-right: 10px;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    line-height: 40px;
+                    @include transition();
+                }
+
+                &:hover {
+                    > .txt {
+                        text-decoration: underline;
+                    }
+                }
+
+                &.is-active {
+                    > .txt {
+                        background: $component_bg_color_active;
+                        color: #fff;
+                        font-weight: bold;
+                        text-decoration: none !important;
+                    }
+                }
+            }
+        }
+
+        &.month_box {
+            gap: 10px;
+            flex: 1 1;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            padding: 10px;
+            background: #f9f9f9;
+
+            > .ui_btn {
+                height: auto;
+                padding: 0;
+                @include transition(0);
+
+                > .txt {
+                    display: block;
+                    margin: 0 auto;
+                    border-radius: 4px;
+                    line-height: 30px;
+                    @include transition();
+                }
+
+                &:hover:not([disabled]) {
+                    > .txt {
+                        // color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+
+                &.is-active {
+                    > .txt {
+                        background: $component_bg_color_active !important;
+                        color: #fff !important;
+                        font-weight: bold;
+                        text-decoration: none !important;
+                    }
+                }
+
+                &[disabled] {
+                    > .txt {
+                        @include opacity(0.5);
+                    }
+                }
+            }
+        }
+    }
+}

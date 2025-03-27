@@ -1,0 +1,105 @@
+.ui_box {
+    height: 100%;
+    padding: 20px;
+    .wrap {
+        position: relative;
+
+        &.is-lnb {
+            .container {
+                .contents {
+                    .content {
+                        max-height: calc(100vh - 210px);
+                    }
+                }
+            }
+
+            &.is-view-permission {
+                .container {
+                    .contents {
+                        .content {
+                            max-height: calc(100vh - 170px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-view-permission {
+            .container {
+                .contents {
+                    .content {
+                        max-height: calc(100vh - 230px);
+                    }
+                }
+            }
+        }
+
+        .container {
+            .header {
+                display: flex;
+                justify-content: end;
+                padding-bottom: 10px;
+            }
+
+            .contents {
+                .subject {
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                .content {
+                    max-height: calc(100vh - 270px);
+                    padding-top: 30px;
+                    overflow-y: auto;
+                }
+            }
+
+            &.is-edit-mode {
+                .header {
+                    padding-bottom: 20px;
+                }
+
+                .contents {
+                    > .form {
+                        display: flex;
+                        padding-bottom: 20px;
+
+                        > strong {
+                            width: 64px;
+                            padding-top: 2px;
+                        }
+
+                        .input {
+                            flex: 1 1;
+
+                            > .title {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .btn-wrap {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    padding: 20px;
+                }
+            }
+        }
+
+        &:empty {
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: '데이터 없음';
+                display: block;
+                // width: 100%;
+                // height: 100%;
+            }
+        }
+    }
+}

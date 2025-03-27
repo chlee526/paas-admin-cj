@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "@dist/dev/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/mockServiceWorker.js",
+            "dest": "@dist/dev/mockServiceWorker.js",
+            "headers": { "Content-Type": "application/javascript" }
+        },
+        { "src": "/dev/(.*)", "dest": "@dist/dev/$1" },
+        { "src": "/(.*)", "dest": "@dist/dev/$1" },
+        { "src": "/(.*)", "dest": "@dist/dev/index.html" }
+    ]
+}

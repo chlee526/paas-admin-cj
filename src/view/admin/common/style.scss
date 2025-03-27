@@ -1,0 +1,30 @@
+#content {
+    > .wrap {
+        > .contents {
+            > .wrap {
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+        }
+    }
+}
+
+.category_add {
+    flex: 0 0 100% !important;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 20px 0;
+}
+
+.common_code {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-self: flex-start;
+
+    > * {
+        flex: 0 1;
+        min-width: 400px;
+        height: 300px;
+    }
+}

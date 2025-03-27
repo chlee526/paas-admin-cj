@@ -1,0 +1,134 @@
+@import '@shared/styles/util/mixins.scss';
+
+// 사이트 목록
+.site_list {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    ::v-deep {
+        > .wrap {
+            .virtual-list {
+                height: 100%;
+                overflow-x: hidden;
+
+                .list-wrap {
+                    .comp-item {
+                        padding: 2px 0 !important;
+                        @include transition(0.1, 0, (background-color, border-color, color));
+
+                        &.ui-selected {
+                            .site_item {
+                                background-color: #ffe9e8;
+                                border-color: #edd3d3;
+                                color: #333;
+
+                                &.is_all_site {
+                                    border-color: #c7dcbf;
+                                    background-color: #e8f9d3;
+                                    color: #333;
+                                }
+                            }
+                        }
+
+                        &.ui-selecting {
+                            .site_item {
+                                background-color: #ffe9e8;
+                                border-color: #edd3d3;
+                                color: #333;
+
+                                &.is_all_site {
+                                    border-color: #c7dcbf;
+                                    background-color: #e8f9d3;
+                                    color: #333;
+                                }
+                            }
+                        }
+
+                        &:hover:not(.ui-selected, .ui-selecting) {
+                            .site_item {
+                                background-color: #fff4f4;
+
+                                &.is_all_site {
+                                    background-color: #f2fbe5;
+                                }
+                            }
+                        }
+
+                        .site_item {
+                            display: grid;
+                            grid-template-columns: 90px 90px minmax(100px, 30%) 1fr;
+                            gap: 4px;
+                            position: relative;
+                            padding: 4px 6px;
+                            border: 1px solid transparent;
+                            border-radius: 5px;
+                            background: #ffffff;
+                            box-sizing: border-box;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: #666666;
+                            text-align: left;
+                            vertical-align: top;
+                            outline: none;
+                            user-select: none;
+
+                            .seq {
+                                padding: 0 8px;
+                                box-sizing: border-box;
+                                text-align: left;
+                            }
+
+                            .grp_name {
+                                padding: 0 8px;
+                                box-sizing: border-box;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+
+                            .site_name {
+                                padding: 0 8px;
+                                box-sizing: border-box;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+
+                            .url {
+                                align-items: center;
+                                padding: 0 8px;
+                                box-sizing: border-box;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+
+                                .status {
+                                    content: '';
+                                    display: inline-block;
+                                    position: relative;
+                                    top: -1px;
+                                    width: 8px;
+                                    height: 8px;
+                                    border-radius: 999px;
+                                    margin-right: 3px;
+
+                                    &.is_use {
+                                        background: #61b674;
+                                    }
+
+                                    &.is_not_use {
+                                        background: #eb4d38;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

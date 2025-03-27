@@ -1,0 +1,90 @@
+.popup_authMngr {
+    .content {
+        background-color: #f6f6f6;
+        .wrap {
+            margin-top: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            box-sizing: border-box;
+            overflow: auto;
+
+            > div {
+                &:not(:last-child) {
+                    padding-bottom: 16px;
+                    margin-bottom: 16px;
+                    border-bottom: 1px solid #eee;
+                }
+
+                display: flex;
+                gap: 10px;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    width: 100%;
+
+                    &.unselected {
+                        color: rgba(0, 0, 0, 0.3);
+                    }
+
+                    &:has(.is-selected) {
+                        color: rgba(0, 0, 0, 0.7);
+                    }
+
+                    strong {
+                        flex-basis: 200px;
+                    }
+
+                    .permission_box {
+                        border: 1px solid rgba(0, 0, 0, 0.12);
+                        border-radius: 4px;
+                        overflow: hidden;
+
+                        button {
+                            border-radius: unset;
+                            border: unset;
+                            border-right: 1px solid rgba(0, 0, 0, 0.12);
+                            padding: 4px 10px;
+                            font-weight: 600;
+
+                            &:last-child {
+                                border-right: none;
+                            }
+
+                            &.is-selected {
+                                color: rgba(0, 0, 0, 0.7);
+                                background-color: #ddd;
+                            }
+                        }
+                    }
+                }
+
+                .depth1 {
+                    flex-basis: 150px;
+
+                    strong {
+                        font-size: 1.1em;
+                    }
+
+                    .item {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        strong {
+                            flex-basis: unset;
+                        }
+                    }
+                }
+
+                .depth2 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    flex: 1;
+                }
+            }
+        }
+    }
+}

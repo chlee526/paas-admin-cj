@@ -1,0 +1,102 @@
+@import '@shared/styles/util/mixins.scss';
+
+.common_codes_filtergrp {
+    &.btn-item-mdfy {
+        padding: 3px 0;
+
+        > .title-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4px;
+            height: 30px;
+            padding: 0 4px 0 10px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: #fff;
+            cursor: pointer;
+            @include transition();
+
+            .colors {
+                flex: 0 0 30px;
+                width: 30px;
+                height: 16px;
+                border-radius: 4px;
+                background: var(--color);
+            }
+
+            .btn-item-add,
+            .btn-item-remove {
+                visibility: hidden;
+                @include opacity(0);
+                @include transition();
+            }
+            .btn-item-add {
+                margin-left: auto;
+
+                & + .btn-item-remove {
+                    margin-left: 0 !important;
+                }
+            }
+            .btn-item-remove {
+                margin-left: auto;
+            }
+            .common_codes_filtergrp {
+                width: auto !important;
+                padding: 0;
+                margin: 0 0 0 auto;
+                background: none;
+
+                > .title-wrap {
+                    padding: 0;
+                }
+            }
+
+            &:hover {
+                background: #999;
+                color: #fff;
+
+                .btn-item-add,
+                .btn-item-remove {
+                    visibility: visible;
+                    @include opacity(1);
+                }
+            }
+        }
+    }
+
+    &.is-expanded {
+        > .title-wrap {
+            > .common_codes_filtergrp {
+                color: #666;
+            }
+
+            .btn-item-add,
+            .btn-item-remove {
+                visibility: visible;
+                @include opacity(1);
+            }
+        }
+
+        &.item_lv_1 {
+            > .title-wrap {
+                background: #999;
+                color: #fff;
+            }
+        }
+    }
+
+    @for $Loop1 from 2 through 20 {
+        &.item_lv_#{$Loop1} {
+            padding-left: calc(30px * #{$Loop1} - 30px);
+            box-sizing: border-box;
+
+            > .title-wrap {
+                height: 24px;
+                background: rgba(255, 255, 255, 0.5);
+            }
+            // flex: 1 1 calc(4.1666% * #{$Loop1});
+            // box-sizing: border-box;
+        }
+    }
+}

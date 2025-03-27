@@ -1,0 +1,39 @@
+// 수집 사이트
+.collect_site {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 12px;
+    border: 1px solid #edd3d3;
+    border-bottom-left-radius: 0;
+    box-sizing: border-box;
+
+    > .ui_function {
+        padding: 8px 10px;
+        margin: 0;
+        background-color: #f6f6f6;
+        margin-bottom: 8px;
+    }
+
+    > .contents {
+        display: flex;
+        height: calc(100% - 56px);
+        border: 1px solid #ebebeb;
+        background-color: #f6f6f6;
+
+        .list_wrap {
+            flex: 1 1;
+            padding: 6px 4px 6px 8px;
+            border-left: 1px solid #ebebeb;
+
+            > .no_data {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

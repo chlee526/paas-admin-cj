@@ -1,0 +1,94 @@
+/*
+ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+ * 공용(Shared/Override)
+ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+@import '@shared/styles/styles.scss'; // Base(Variables, Mixins, Normalize, Reset, Font, ColorSet)
+
+/*******************************************************************************/
+/*******************************************************************************/
+/*****  OVERIDE ****************************************************************/
+@import './override/color_set'; // Override
+/*****  OVERIDE ****************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+
+/* 레이아웃 */
+@import '@shared/layout/styles.scss'; // Layout, Grid, Header, Footer,
+
+/* UI */
+@import '@shared/styles/ui/styles.scss';
+
+/* Project Scss to JS Export Module */
+@import './override/export.module.scss'; // Override
+
+/* Component */
+@import '@shared/ui/styles.scss';
+
+// Template
+@import '@shared/templates/styles.scss';
+
+/*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+ * 프로젝트 전용
+ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+/* VIEW > Page */
+#wrap {
+    &.is-admin {
+        &.is-lnb > {
+            .appContainerWrap {
+                flex-wrap: nowrap;
+            }
+        }
+
+        main {
+            > .contents {
+                > .wrap {
+                    > .ui_row {
+                        > .is-cols-pad {
+                            // treeview와 list 겹침 해결
+                            > .ui_col:not(:only-child) {
+                                &:first-child {
+                                    z-index: 1;
+                                }
+                                &:nth-child(2) {
+                                    z-index: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ui_brd {
+        > .wrap {
+            > table {
+                > thead {
+                    top: 60px;
+                }
+                > tbody {
+                    td {
+                        border-right: 1px solid rgba(0, 0, 0, 0.08);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#wrap:not(.is-lnb) {
+    .ui_brd {
+        > .wrap {
+            > table {
+                > thead {
+                    top: 40px + 60px;
+                }
+            }
+        }
+    }
+}
+/* vendors(외부 라이브러리 스타일) */

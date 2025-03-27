@@ -1,0 +1,10 @@
+::v-deep .ui_bubble {
+    display: block;
+
+    .input_mdfy {
+        input {
+            font-size: 1.6em !important;
+            font-weight: bold;
+        }
+    }
+}

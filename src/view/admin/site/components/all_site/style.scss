@@ -1,0 +1,92 @@
+@import '@shared/styles/util/mixins.scss';
+// 전체 사이트
+.all_site {
+    flex: 0 1 40%;
+    position: relative;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c7dcbf;
+    border-top-right-radius: 0;
+    box-sizing: border-box;
+
+    > .ui_function {
+        gap: 20px;
+        padding: 8px 10px;
+        margin: 0;
+        background-color: #f6f6f6;
+        margin-bottom: 8px;
+
+        > * {
+            flex-wrap: nowrap;
+
+            &.rc {
+                > .dcp.inputBox.search {
+                    width: calc(100% - 65px) !important;
+                }
+
+                > .ui_btn {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    > .contents {
+        height: 100%;
+        padding: 6px 4px 6px 8px;
+        border: 1px solid #ebebeb;
+        background-color: #f6f6f6;
+        overflow: hidden;
+
+        ::v-deep .site_item {
+            grid-template-columns: 90px minmax(100px, 30%) 1fr !important;
+        }
+
+        > .no_data {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &::v-deep > .register_popover {
+        > .items_wrap {
+            > .items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                padding: 20px;
+
+                strong {
+                    font-size: 15px;
+                }
+
+                .wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    width: 100%;
+                    max-height: 200px;
+                    padding: 3px 1px 3px 3px;
+                    overflow-y: auto;
+
+                    > li {
+                        width: 100%;
+
+                        > button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            > .btns {
+                padding: 10px 30px;
+            }
+        }
+    }
+}

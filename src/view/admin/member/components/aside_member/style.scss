@@ -1,0 +1,15 @@
+fieldset {
+    div > * {
+        width: 100%;
+        &.input-with-btn-box {
+            display: grid;
+            grid-template-columns: auto 70px;
+            gap: 4px;
+        }
+    }
+    div > strong {
+        display: block;
+        font-size: 1.05em;
+        padding: 4px 0;
+    }
+}

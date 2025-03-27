@@ -1,0 +1,52 @@
+@import '@shared/styles/util/mixins.scss';
+
+.ui_box {
+    min-width: 350px;
+
+    .btn_regist {
+        @include transition();
+    }
+
+    .btn_box {
+        .ui_btn {
+            @include transition();
+        }
+    }
+
+    .sub {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-height: 50vh;
+        overflow: hidden;
+        overflow-y: auto;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 5px;
+            padding: 10px 8px;
+
+            > div:first-child {
+                width: 100%;
+                display: flex;
+                gap: 5px;
+            }
+
+            .ui_btn {
+                padding: 4px 5px;
+                .icon {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        & + div {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

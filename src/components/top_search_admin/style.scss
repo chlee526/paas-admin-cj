@@ -1,0 +1,48 @@
+#wrap {
+    #content {
+        > .wrap {
+            > .top_searchs.admin {
+                position: static;
+                padding: 0;
+                margin: 20px 0 !important;
+
+                > .wrap {
+                    max-width: none;
+                    border: none;
+                    border-radius: 5px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #fff;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+                    > .inner_wrap {
+                        overflow: visible;
+                        > .searchs {
+                            max-width: none;
+                            overflow: visible;
+                            padding: 0;
+                            > .input_form {
+                                width: 100%;
+                                padding: 20px 20px 30px 20px;
+                            }
+                            > .btns {
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                translate: -50% 50% 0;
+                                text-align: center;
+                                .ui_btn {
+                                    margin: 0 2px;
+                                    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+                                    &:last-child {
+                                        width: 250px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

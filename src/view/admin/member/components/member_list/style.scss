@@ -1,0 +1,7 @@
+.ui_brd {
+    tbody {
+        tr:not(:has(.is-no-over)) {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+fieldset {
+    div > * {
+        width: 100%;
+    }
+    div > strong {
+        display: block;
+        font-size: 1.05em;
+        padding: 4px 0;
+    }
+}

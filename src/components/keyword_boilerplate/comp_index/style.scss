@@ -1,0 +1,47 @@
+#wrap.is-admin {
+    // 임시로 main의 하단 pad 조정
+    main {
+        padding-bottom: 20px !important;
+    }
+
+    // Gird Col이 트리뷰를 가지고 있으면
+    .ui_col:has(.group_tree_wrap) {
+        flex: 0 0 280px;
+        max-width: 280px;
+
+        .group_tree_wrap {
+            display: flex;
+            flex-direction: column;
+            position: sticky !important;
+            top: 60px;
+            height: calc(100vh - 80px);
+
+            > .content {
+                flex: 1 1 auto;
+                padding: 0;
+                height: calc(100% - 76px);
+
+                > div {
+                    height: 100%;
+                    > .is-keyword-mngr {
+                        height: 100%;
+                    }
+                }
+            }
+
+            > .footer {
+                flex: 0 0;
+                line-height: 1;
+            }
+        }
+    }
+
+    &.is-lnb {
+        #container #content .contents .ui_row .ui_col {
+            .group_tree_wrap {
+                top: 20px;
+                height: calc(100vh - 40px);
+            }
+        }
+    }
+}

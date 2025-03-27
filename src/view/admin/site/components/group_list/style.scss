@@ -1,0 +1,121 @@
+@import '@shared/styles/util/mixins.scss';
+@import '@shared/styles/base/color_set.scss';
+
+// 사이트 그룹 목록
+.user_group_wrap {
+    flex: 0 0 110px;
+    position: relative;
+    height: calc(100% - 50px);
+
+    > .ui_bubble {
+        height: 100%;
+    }
+
+    .user_group {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+
+        ::v-deep {
+            > .wrap {
+                width: 100%;
+
+                .virtual-list {
+                    outline: 1px solid transparent;
+                    overflow-x: hidden;
+                    @include transition(0.24, 0, (outline, box-shadow));
+
+                    .list-wrap {
+                        .comp-item {
+                            padding: 0 !important;
+
+                            .group_item {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                min-height: 50px;
+                                border-bottom: 1px solid #ebebeb;
+                                background-color: #ffffff;
+                                text-align: center;
+                                box-sizing: border-box;
+                                font-weight: 500;
+                                color: #333333;
+                                user-select: none;
+                                cursor: pointer;
+                                @include transition(0.24, 0, (background-color, border-color, border-radius, color));
+
+                                &.is-active {
+                                    background-color: #666 !important;
+                                    color: #fff !important;
+
+                                    > .is-expanded {
+                                        color: #333333;
+                                    }
+                                }
+
+                                &:hover {
+                                    background-color: #e7e7e7;
+                                }
+
+                                > .wrap {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                    padding: 8px 6px;
+                                    box-sizing: border-box;
+
+                                    .name {
+                                        margin-bottom: 4px;
+                                    }
+                                    .amount {
+                                        padding: 2px 8px;
+                                        box-sizing: border-box;
+                                        background-color: #f1f1f1;
+                                        font-size: 11px;
+                                        color: #999;
+                                        border-radius: 999px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .add_group_btn {
+        position: absolute;
+        bottom: -40px;
+        left: 10px;
+        width: calc(100% - 20px);
+
+        ::v-deep {
+            > .title-wrap {
+                padding: 6px 10px;
+                border: 1px solid #d4d4d4;
+                border-radius: 4px;
+                background: #ffffff;
+                box-sizing: border-box;
+                text-align: center;
+                cursor: pointer;
+                @include transition(0.2, 0, (background-color, border-color, border-radius, color));
+
+                &:hover {
+                    border: 1px solid $component_brd_color_over;
+                }
+                &.is-active {
+                    border: 1px solid $component_brd_color_over;
+                    background: $component_brd_color_over;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

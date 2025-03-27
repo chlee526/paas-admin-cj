@@ -1,0 +1,30 @@
+::v-deep .brdReason {
+    thead {
+        top: 0 !important;
+    }
+
+    td {
+        border-right: none !important;
+        border-bottom: none !important;
+        text-align: center !important;
+        color: inherit !important;
+
+        &:before {
+            background: #fafafa !important;
+        }
+
+        &:last-child {
+            text-align: left !important;
+        }
+
+        &.fail {
+            color: #de1313 !important;
+        }
+
+        > * {
+            display: block;
+            white-space: pre-wrap !important;
+            line-height: 1.3em;
+        }
+    }
+}

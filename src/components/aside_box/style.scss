@@ -1,0 +1,121 @@
+@import '@shared/styles/util/mixins.scss';
+
+.ui_box {
+    padding: 0;
+
+    & + .ui_box {
+        margin-top: 20px;
+    }
+
+    .header {
+        line-height: 50px;
+        font-size: 1.1em;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #333;
+
+        > .wrap {
+            justify-content: flex-start;
+            gap: 10px;
+            align-items: center;
+
+            > h3 {
+                flex: 0 0 auto;
+                font-size: 1.2em;
+                line-height: 50px;
+                gap: 8px;
+                align-items: center;
+
+                &:before {
+                    content: none;
+                    left: 0;
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+
+            ::v-deep .ui_btn {
+                font-weight: normal;
+                font-size: 13px;
+                @include transition();
+            }
+
+            .rc {
+                margin-left: auto;
+            }
+        }
+
+        .ui_btn {
+            &.is-expand {
+                height: 40px;
+                background: transparent;
+                border: none;
+                color: #fff;
+            }
+        }
+
+        &:after {
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    .content {
+        padding: 20px;
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        fieldset {
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            grid-template-rows: auto;
+            gap: 8px 20px;
+            border: none;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 20px !important;
+
+            > strong {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                padding-right: 20px;
+
+                &.required {
+                    &::after {
+                        content: '*';
+                        padding-left: 4px;
+                        color: red;
+                    }
+                }
+            }
+
+            > * {
+                display: flex;
+                align-items: center;
+                min-height: 24px;
+                box-sizing: border-box;
+            }
+        }
+
+        .btn_box {
+            display: flex;
+            justify-content: flex-end;
+            gap: 4px;
+            padding: 14px 20px;
+            margin: 0 -20px -20px;
+            // border-top: 1px solid #eeeeee;
+            border-radius: 0 0 5px 5px;
+            background: #fafafa;
+
+            ::v-deep .ui_btn {
+                @include transition();
+            }
+        }
+    }
+}

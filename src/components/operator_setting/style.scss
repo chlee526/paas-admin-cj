@@ -1,0 +1,92 @@
+@import '@/assets/css/override/_color_set.scss';
+@import '@shared/styles/util/_mixins.scss';
+
+.operator_box {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 5px;
+    margin-top: 10px;
+
+    .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px;
+
+        .grp {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        hr {
+            width: 1px;
+            height: 70%;
+            margin: 0 10px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+    }
+
+    .dcp {
+        &.radio > input[type='radio'] + label,
+        &.checkbox > input[type='checkbox'] + label {
+            padding-left: 8px !important;
+            padding-right: 8px !important ;
+        }
+    }
+
+    .adjacency_keyword {
+        display: flex;
+        padding: 0 4px;
+        border: 1px solid #808080;
+        border-radius: 100px;
+        background: #ffffff;
+        box-sizing: border-box;
+        @include transition();
+
+        > span {
+            padding: 0 10px;
+            // border-left: 1px dashed $component_brd_color;
+            // border-right: 1px dashed $component_brd_color;
+            line-height: 22px;
+            background: #808080;
+            color: #fff;
+        }
+
+        input {
+            position: relative;
+            width: 40px;
+            border: none;
+            outline: none;
+            border-radius: 100px;
+            background: #fff;
+            text-align: center;
+
+            -moz-appearance: textfield;
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &:after {
+                content: '~';
+                position: absolute;
+            }
+        }
+
+        &.is-disabled {
+            border-color: $component_brd_color;
+            pointer-events: none;
+            // text-decoration: line-through;
+            @include opacity(0.5);
+
+            > span {
+                background: #c4c4c4;
+                color: #666;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import '@/components/category/style.scss';
+.ui_box {
+    ::v-deep .header {
+        .wrap {
+            align-items: center;
+            * {
+                line-height: normal;
+            }
+        }
+    }
+
+    .category {
+        padding: 0;
+        box-shadow: none;
+
+        > .list {
+            flex: none;
+            height: 144px;
+        }
+    }
+}

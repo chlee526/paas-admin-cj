@@ -1,0 +1,74 @@
+@import '@shared/styles/util/mixins.scss';
+
+.ui_box {
+    min-width: 350px;
+
+    .btn_regist {
+        @include transition();
+    }
+
+    .btn_box {
+        .ui_btn {
+            @include transition();
+        }
+    }
+
+    .content {
+        .rsn {
+            margin-bottom: 20px;
+            li {
+                margin-bottom: 10px;
+
+                &:not(.name) {
+                    display: grid;
+                    grid-template-columns: 70px auto;
+                    word-break: break-all;
+                }
+
+                &.name {
+                    ::v-deep .dcp.selectBox {
+                        > .wrap {
+                            height: 47px;
+                        }
+                    }
+
+                    &.is-edit {
+                        padding: 10px 15px;
+                        border: 1px solid #e7e7e7;
+                        border-left-width: 8px;
+                        border-radius: 4px;
+
+                        > span {
+                            display: block;
+                            padding-bottom: 6px;
+                            line-height: 1;
+
+                            > * {
+                                display: inline-block;
+                                padding: 0 3px;
+                                line-height: 1;
+                                vertical-align: top;
+                            }
+                        }
+
+                        > strong {
+                            display: block;
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cj {
+            display: grid;
+            grid-template-columns: 50px auto;
+            row-gap: 15px;
+            align-items: center;
+            padding: 15px 20px 15px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            background-color: #f3f3f3;
+        }
+    }
+}
