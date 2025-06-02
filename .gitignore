@@ -2,7 +2,7 @@
 node_modules
 package-lock.json
 /@dist
-
+README_.md
 
 # local env files
 .env.local
